@@ -1,12 +1,17 @@
 import PeopleListItem from './PeopleListItem'
 
 function PeopleList(props) {
-  const { people } = props
+  const { people, showViewLink, showEditLink } = props
 
   return (
     <ul>
       {people.map((person, index) => (
-        <PeopleListItem key={index} person={person} />
+        <PeopleListItem 
+          key={person.login.uuid} 
+          person={person} 
+          showViewLink={showViewLink}
+          showEditLink={showEditLink}
+        />
       ))}
     </ul>
   )
